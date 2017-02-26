@@ -13,7 +13,7 @@ function Entity:initialize(world, x, y, w, h)
   self.h = h
 end
 
-function Entity:getRect()
+function Entity:getRect()  --useful for collision detector
   return self.x, self.y, self.w, self.h
 end
 

@@ -1,4 +1,3 @@
-
 -- import libraries
 bump = require 'libs.bump.bump'
 Gamestate = require 'libs.hump.gamestate'
@@ -19,11 +18,13 @@ player = nil
 world = nil
 
 function gameLevel1:enter()
+  print('gameLevel1 enter')
   --game levels need collisions
   world = bump.newWorld(16) --create a world for bump to function in; tile size is 16
   
   --initialize the Entity system
-  Entities:enter()
+  Entities:enter(world, nil)
+  
   player = Player(world, 16, 16)
   ground_0 = Ground(world, 120, 360, 640, 16)
   ground_1 = Ground(world, 0, 448, 640, 16)

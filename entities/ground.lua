@@ -1,4 +1,3 @@
-
 local Class = require 'libs.hump.class'
 local Entity = require 'entities.Entity'
 

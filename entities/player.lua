@@ -1,4 +1,3 @@
-
 local Class = require 'libs.hump.class'
 local Entity = require 'entities.Entity'
 
@@ -7,24 +6,24 @@ local player = Class{
 }
 
 function player:init(world, x, y)
-  self.img = love.graphics.newImage('assets/character_block.png')
+  self.img = love.graphics.newImage('/assets/character_block.png')
   
   Entity.init(self, world, x, y, self.img:getWidth(), self.img:getHeight())
   
   --Add unique player values
   self.xVelocity = 0 --current velocity on x/y axes
   self.yVelocity = 0
-  self.acc = 100, --player acceleration
-  self.maxSpeed = 600, --top speed
-  self.friction = 20, --slow the player down, toggle for icy or slick platforms
-  self.gravity = 80,
+  self.acc = 100 --player acceleration
+  self.maxSpeed = 600 --top speed
+  self.friction = 20 --slow the player down, toggle for icy or slick platforms
+  self.gravity = 80
   
     --jumping things
-  self.isJumping = false, --in the process of jumping?
-  self.isGrounded = false, --on the ground?
-  self.hasReachedMax = false, --is this how high we can jump?
-  self.jumpAcc = 500, --how fast we accelerate up
-  self.jumpMaxSpeed = 11, --speed limit while jumping
+  self.isJumping = false --in the process of jumping?
+  self.isGrounded = false --on the ground?
+  self.hasReachedMax = false --is this how high we can jump?
+  self.jumpAcc = 500 --how fast we accelerate up
+  self.jumpMaxSpeed = 11 --speed limit while jumping
   
   self.world:add(self, self:getRect())
 end
@@ -58,7 +57,7 @@ function player:update(dt)  --basically the update function from part 1, but wit
   --jump code
   if love.keyboard.isDown("up", "w") then
     if -self.yVelocity < self.jumpMaxSpeed and not self.hasReachedMax then
-      self.yVelocity =  self.yVelocity - self.jumpAcc * dt
+      self.yVelocity = self.yVelocity - self.jumpAcc * dt
     elseif math.abs(self.yVelocity) > self.jumpMaxSpeed then
       self.hasReachedMax = true
     end

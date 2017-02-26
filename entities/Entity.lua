@@ -1,11 +1,10 @@
-
 --Represents a single drawable object
-local Class = require 'libs.middleclass.middleclass'
+local Class = require 'libs.hump.class'
 
-local Entity = Class('Entity')
+local Entity = Class{}
 
 --Entities must have a :initialize, :draw, :update
-function Entity:initialize(world, x, y, w, h)
+function Entity:init(world, x, y, w, h)
   self.world = world
   self.x = x
   self.y = y

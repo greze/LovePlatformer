@@ -1,4 +1,3 @@
-
 local mainMenu = {}
 
 return mainMenu

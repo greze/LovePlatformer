@@ -6,7 +6,7 @@ bump = require 'libs.bump.bump'
 Gamestate = require 'libs.hump.gamestate'
 
 --Pull in each of the game states
-local mainMenu = require 'gamestates.mainmenu'
+local mainMenu = require 'gamestates.mainMenu'
 local gameLevel1 = require 'gamestates.gameLevel1'
 local pause = require 'gamestates.pause'
 
